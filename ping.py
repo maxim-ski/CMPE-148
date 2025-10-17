@@ -130,7 +130,7 @@ def do_ping(dest_host: str, count: int, timeout: float, interval: float, ttl: in
         mn = min(rtts)
         mx = max(rtts)
         avg = statistics.mean(rtts)
-        sd = statistics.pstdev(rtts)  # population stdev (like most ping tools)
+        sd = statistics.pstdev(rtts)
         print(f"round-trip min/avg/max/stddev = {mn:.3f}/{avg:.3f}/{mx:.3f}/{sd:.3f} ms")
 
     return 0
@@ -148,4 +148,5 @@ def main():
     sys.exit(do_ping(args.host, args.count, args.timeout, args.interval, args.ttl, args.size))
 
 if __name__ == "__main__":
+
     main()
